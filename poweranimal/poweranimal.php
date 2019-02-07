@@ -32,7 +32,7 @@ if (!isset($_SESSION["animal"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
     <title>Power Animal Finder - Find your power animal!</title>
 </head>
 <body>
@@ -47,9 +47,9 @@ if (!isset($_SESSION["animal"])) {
 
     <p>Your power animal is the <?= $power_animal ?>!</p>
 
-    <p><img src="<?= $power_animal ?>.png" alt="power animal"/></p>
+    <p><img src="img/<?= $power_animal ?>.png" alt="power animal"/></p>
 
-    <p><a href="../facts.php" ?>Facts about your animal</a></p>
+    <p><a href="facts.php" ?>Facts about your animal</a></p>
 
     <form action="poweranimal.php">
         <div><input type="submit" value="Reload"/></div>

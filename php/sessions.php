@@ -1,27 +1,57 @@
 <?php
 session_start();
 
-/*
-$_SESSION["name"] = value;       # store session data
-$variable = $_SESSION["name"];   # read session data
-if (isset($_SESSION["name"])) {  # check for session data
-*/
-
-if (isset($_SESSION["points"])) {
-    $points = $_SESSION["points"];
-    print("You've earned $points points.\n");
+if (isset($_POST['add'])) {
+    $_SESSION["points"] += 2;
 } else {
-    $_SESSION["points"] = 0;  # default
+    if (isset($_POST['unset'])) {
+        //Unset a session
+        unset($_SESSION['points']);
+
+        //Delete session
+        session_destroy();
+        session_regenerate_id(TRUE);   # flushes out session ID number
+        session_start();
+    }
 }
-//In PHP 7 this is shortened to:
-$points = $_SESSION['points'] ?? 0;
 
-//Unset a session
-unset($_SESSION['points']);
+?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <title>Sessions</title>
+</head>
+<body>
+<div class="container-fluid">
+    <p>
+        <?php
+        if (isset($_SESSION["points"])) {
+            $points = $_SESSION["points"];
+            echo("You've earned $points points.\n");
+        } else {
+            $_SESSION["points"] = 0;  # default
+        }
+        /*In PHP 7 the isset check is shortened to:
+        $points = $_SESSION['points'] ?? 0; */
 
-//Delete session
-session_destroy();
-session_regenerate_id(TRUE);   # flushes out session ID
-numbersession_start();
+        ?>
+    </p>
+
+    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+        <button id="add" name="add">Add points</button>
+    </form>
+
+    <hr>
+
+    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+        <button id="unset" name="unset">Unset</button>
+    </form>
+
+</div>
+</body>
+</html>
 
