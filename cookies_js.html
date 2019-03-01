@@ -11,8 +11,13 @@
 <div class="container">
     <hr>
     <p>Open the Developer Tools > JavaScript console to see the output from the JS cookies</p>
-    <p>Then press the button below to create the cookies and output the values to console.log</p>
-    <button id="run">Run!</button>
+    <p>Then complete and submit the form below to create a cookie and output the values to console.log</p>
+    <hr>
+    <form name="myform" action="">
+        Enter name: <input type="text" name="name" required/>
+        Enter password: <input type="password" name="password" required/>
+        <input type="button" id="setcookie" value="Set Cookie"/>
+    </form>
     <hr>
 </div>
 </body>

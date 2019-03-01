@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>PHP cookies</title>
+</head>
+<body>
+<div class="container">
+    <hr>
+    <p>Open the Developer Tools > Developer Tools and go to the Network tab</p>
+    <p>Then complete and submit the form below to create a cookie view the details in the Network tab of the console</p>
+    <hr>
+    <form name="set" action="php/cookies.php" method="post">
+        Enter name: <input type="text" name="username" required/>
+        Enter password: <input type="password" name="password" required/>
+        <input type="hidden" name="type" value="1" />
+        <input type="submit" id="setcookie" value="Set Cookie"/>
+    </form>
+    <hr>
+    <form name="read" action="php/cookies.php" method="post">
+        <input type="submit" id="readcookie" value="Read Cookie"/>
+    </form>
+</div>
+</body>
+</html>
