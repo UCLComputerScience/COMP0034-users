@@ -8,9 +8,12 @@
 </head>
 <body>
 <?php
+include('php/functions.php');
+requireLogIn();
 include('navbar.php');?>
 <main role="main" class="container">
 
+    <?php echo $_SESSION['email']?>
 </main>
 
 </body>

@@ -28,3 +28,5 @@ function closeDb($connection)
         mysqli_close($connection);
     }
 }
+
+connectToDb();

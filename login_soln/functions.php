@@ -5,7 +5,7 @@ function isLoggedIn(){
 
 function requireLogIn(){
     if(!isLoggedIn()){
-        header("Location: home.php");
+        header("Location: index.php");
     } else {
         //do nothing
     }
@@ -13,6 +13,6 @@ function requireLogIn(){
 
 function logout(){
     unset($_SESSION['email']);
-    header("Location: home.php");
+    header("Location: index.php");
     exit;
 }
