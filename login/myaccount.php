@@ -12,7 +12,16 @@
 include('navbar.php');?>
 <main role="main" class="container">
 
-    <!-- Add PHP to requireLogIn and then generate a page with account details -->
+    <?php
+
+    /* requireLogIn(); - see functions.php
+
+    Add a function to generate a listing of the account details
+    (details in the database are firstname, lastname, email address).
+    If you link an address to the account you created in the database
+    then you can also get address details */
+
+    ?>
 
 </main>
 
