@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once('initialise.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">

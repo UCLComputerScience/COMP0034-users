@@ -1,3 +1,4 @@
+<?php require_once('initialise.php');?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +11,8 @@
 <?php
 include('navbar.php');?>
 <main role="main" class="container">
+
+    <!-- Add PHP to requireLogIn and then generate a page with account details -->
 
 </main>
 
